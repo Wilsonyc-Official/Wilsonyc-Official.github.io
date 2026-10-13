@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>О компании — Оптик-Центр</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<section class="page-head">
+  <img class="page-head-bg" src="images/slide-3.jpg" alt="">
+  <div class="container">
+    <div class="crumbs"><a href="index.html">Главная</a> / О нас</div>
+    <h1>О компании</h1>
+    <p>Салон оптики, где вам помогут видеть лучше: от проверки зрения до готовых очков.</p>
+  </div>
+</section>
+
+<section class="block">
+  <div class="container about">
+    <div class="about-photo">
+      <img src="images/about.jpg" alt="Очки в салоне Оптик-Центр" loading="lazy">
+      <div class="about-badge"><b>15</b><span>лет помогаем видеть лучше</span></div>
+    </div>
+    <div>
+      <div class="eyebrow">Кто мы</div>
+      <h2>Оптик-Центр — салон оптики, которому доверяют</h2>
+      <p>Мы помогаем подобрать очки и линзы, которые удобны каждый день. Проверяем зрение на современном оборудовании, подбираем оправу по форме лица и изготавливаем очки в собственной мастерской.</p>
+      <p>В салоне принимают врачи-офтальмологи и оптометристы. Записаться можно онлайн — с выбором специалиста и удобного времени.</p>
+      <div class="features">
+        <div class="feature"><span class="feature-ic" data-icon="eye"></span><div><b>Точная диагностика</b><span>Компьютерная проверка зрения</span></div></div>
+        <div class="feature"><span class="feature-ic" data-icon="user"></span><div><b>Опытные врачи</b><span>Офтальмологи и оптометристы</span></div></div>
+        <div class="feature"><span class="feature-ic" data-icon="wrench"></span><div><b>Своя мастерская</b><span>Очки за 1 день, ремонт при вас</span></div></div>
+        <div class="feature"><span class="feature-ic" data-icon="shield"></span><div><b>Гарантия</b><span>На все изготовленные очки</span></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="block" style="padding-top: 0">
+  <div class="container">
+    <div class="section-head">
+      <div><div class="eyebrow">Просто и быстро</div><h2>Как мы работаем</h2></div>
+    </div>
+    <div class="steps">
+      <div class="step"><h3>Запись</h3><p>Онлайн на сайте или по телефону — к выбранному врачу в удобное время.</p></div>
+      <div class="step"><h3>Проверка зрения</h3><p>Специалист проведёт диагностику и выпишет рецепт.</p></div>
+      <div class="step"><h3>Подбор оправы</h3><p>Поможем выбрать оправу по форме лица, размеру и бюджету.</p></div>
+      <div class="step"><h3>Готовые очки</h3><p>Изготовим очки в своей мастерской и подгоним их по посадке.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="block" id="contacts" style="padding-top: 0">
+  <div class="container">
+    <div class="contacts">
+      <div class="contacts-info">
+        <div class="eyebrow">Контакты</div>
+        <h2>Ждём вас в салоне</h2>
+        <div class="contact-row"><span class="feature-ic" data-icon="pin"></span><div><span class="hint">Адрес</span><b id="cAddress"></b></div></div>
+        <div class="contact-row"><span class="feature-ic" data-icon="clock"></span><div><span class="hint">Режим работы</span><b id="cHours"></b></div></div>
+        <div class="contact-row"><span class="feature-ic" data-icon="phone"></span><div><span class="hint">Телефон</span><b id="cPhone" class="demo-label"></b></div></div>
+        <p class="hint">Адрес и контакты вымышлены: это демонстрационный прототип, а не сайт реального салона.</p>
+        <div class="slide-actions" style="margin-top: 22px">
+          <a href="booking.html" class="btn btn-pill">Записаться онлайн</a>
+                  </div>
+      </div>
+      <div class="map-placeholder">
+        <div class="map-pin"></div>
+        <b>Оптик-Центр</b>
+        <span id="cAddress2"></span>
+        <small>Демо-проект: карта и маршрут отключены</small>
+      </div>
+    </div>
+  </div>
+</section>
+
+<script src="js/data.js"></script>
+<script src="js/layout.js"></script>
+<script>
+  $$("[data-icon]").forEach((el) => (el.innerHTML = icon(el.dataset.icon)));
+  $(".map-pin").innerHTML = icon("pin", 30);
+  $("#cAddress").textContent = CONTACTS.address;
+  $("#cAddress2").textContent = CONTACTS.address;
+  $("#cHours").textContent = CONTACTS.hours;
+  $("#cPhone").textContent = CONTACTS.phone;
+</script>
+</body>
+</html>

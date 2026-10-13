@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Специалисты — Оптик-Центр</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<section class="page-head">
+  <img class="page-head-bg" src="images/slide-1.jpg" alt="">
+  <div class="container">
+    <div class="crumbs"><a href="index.html">Главная</a> / Специалисты</div>
+    <h1>Наши специалисты</h1>
+    <p>Врачи-офтальмологи и оптометристы. Выберите специалиста и запишитесь онлайн в удобное время.</p>
+  </div>
+</section>
+
+<section class="block">
+  <div class="container">
+    <div class="team-grid" id="teamList"></div>
+  </div>
+</section>
+
+<section class="block" style="padding-top: 0">
+  <div class="container">
+    <div class="cta">
+      <div>
+        <h2>Не знаете, к кому записаться?</h2>
+        <p>Выберите «Любой специалист» — мы запишем вас к врачу, у которого есть свободное время.</p>
+      </div>
+      <div class="slide-actions">
+        <a href="booking.html?specialist=any" class="btn btn-light btn-pill">Записаться к любому</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<script src="js/data.js"></script>
+<script src="js/layout.js"></script>
+<script>
+  const specs = Store.getSpecialists().filter((s) => s.active !== false);
+  $("#teamList").innerHTML = specs.map((s) => teamCardHTML(s, Store.getBookings())).join("");
+  bindTeamCards($("#teamList"), specs);
+</script>
+</body>
+</html>

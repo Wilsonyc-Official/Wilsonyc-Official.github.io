@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <script>document.documentElement.classList.add("js")</script>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Работы | Wilsonyc</title>
+  <meta name="description" content="Все работы Wilsonyc (Wilsonyc-Official): сайты, дизайн и другие проекты с живым превью.">
+  <meta name="theme-color" content="#07080b">
+  <link rel="canonical" href="https://wilsonyc-official.github.io/works.html">
+  <link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Courier+Prime:wght@400;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body data-page="works">
+  <header id="header"></header>
+
+  <main>
+    <section class="page-head">
+      <div class="container">
+        <p class="eyebrow">// портфолио · <span id="works-total"></span></p>
+        <h1 class="page-head__title neon-sm">Работы</h1>
+        <p class="page-head__sub" id="works-sub"></p>
+      </div>
+    </section>
+
+    <section class="section" style="padding-top:32px">
+      <div class="container">
+        <div class="tabs" id="tabs" role="tablist"></div>
+        <div class="toolbar">
+          <label class="search" data-icon="search">
+            <input id="search" type="search" placeholder="Поиск по работам…" autocomplete="off">
+          </label>
+          <span class="result-count" id="result-count"></span>
+        </div>
+        <div class="grid" id="works"></div>
+      </div>
+    </section>
+  </main>
+
+  <footer id="footer"></footer>
+
+  <script src="data/projects.js"></script>
+  <script src="assets/js/app.js"></script>
+</body>
+</html>

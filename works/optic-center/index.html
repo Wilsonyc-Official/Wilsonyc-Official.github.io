@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Оптик-Центр — салон оптики</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<!-- слайдер -->
+<section class="hero" id="hero">
+  <div class="slide active">
+    <img src="images/slide-1.jpg" alt="">
+    <div class="slide-content">
+      <span class="slide-tag">Проверка зрения</span>
+      <h1>Видеть мир чётко</h1>
+      <p>Компьютерная диагностика и подбор очков за 30 минут. Опытные врачи и современное оборудование.</p>
+      <div class="slide-actions">
+        <a href="booking.html?service=check" class="btn btn-pill">Записаться на проверку</a>
+        <a href="about.html" class="btn btn-glass btn-pill">О компании</a>
+      </div>
+    </div>
+  </div>
+  <div class="slide">
+    <img src="images/slide-2.jpg" alt="" loading="lazy">
+    <div class="slide-content">
+      <span class="slide-tag">Каталог</span>
+      <h2>Более 500 оправ</h2>
+      <p>От доступных моделей до премиальных брендов. Цена и точные размеры каждой оправы — прямо на сайте.</p>
+      <div class="slide-actions">
+        <a href="catalog.html" class="btn btn-pill">Смотреть каталог</a>
+        <a href="booking.html?service=fitting" class="btn btn-glass btn-pill">Записаться на примерку</a>
+      </div>
+    </div>
+  </div>
+  <div class="slide">
+    <img src="images/slide-3.jpg" alt="" loading="lazy">
+    <div class="slide-content">
+      <span class="slide-tag">Акция</span>
+      <h2>Скидка до 70%</h2>
+      <p>На определённые виды оправ. Подберём модель по вашему лицу и изготовим очки в собственной мастерской.</p>
+      <div class="slide-actions">
+        <a href="catalog.html" class="btn btn-pill">Выбрать оправу</a>
+        <a href="booking.html" class="btn btn-glass btn-pill">Записаться</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="hero-controls">
+    <button class="hero-arrow" id="heroPrev" aria-label="Назад">‹</button>
+    <div class="hero-dots" id="heroDots"></div>
+    <button class="hero-arrow" id="heroNext" aria-label="Вперёд">›</button>
+    <span class="hero-counter" id="heroCounter"></span>
+  </div>
+</section>
+
+<div class="trust">
+  <div class="container">
+    <div class="trust-item"><b>15 лет</b><span>заботимся о вашем зрении</span></div>
+    <div class="trust-item"><b>500+</b><span>оправ в наличии</span></div>
+    <div class="trust-item"><b>1 день</b><span>изготовление очков</span></div>
+    <div class="trust-item"><b>10 000+</b><span>довольных клиентов</span></div>
+  </div>
+</div>
+
+<!-- О компании -->
+<section class="block">
+  <div class="container about">
+    <div class="about-photo">
+      <img src="images/about.jpg" alt="Очки в салоне Оптик-Центр" loading="lazy">
+      <div class="about-badge"><b>15</b><span>лет помогаем видеть лучше</span></div>
+    </div>
+    <div>
+      <div class="eyebrow">О компании</div>
+      <h2>Оптик-Центр — салон оптики, которому доверяют</h2>
+      <p>Проверяем зрение на современном оборудовании, подбираем оправу по форме лица и изготавливаем очки в собственной мастерской. Принимают опытные врачи-офтальмологи.</p>
+      <div class="features" id="homeFeatures"></div>
+      <div class="slide-actions">
+        <a href="about.html" class="btn btn-pill">Подробнее о нас</a>
+        <a href="team.html" class="btn btn-outline btn-pill">Наши специалисты</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- услуги -->
+<section class="block" style="padding-top: 0">
+  <div class="container">
+    <div class="section-head">
+      <div><div class="eyebrow">Услуги</div><h2>Услуги и цены</h2></div>
+      <a href="booking.html" class="link-arrow">Записаться онлайн <span>→</span></a>
+    </div>
+    <div class="services" id="servicesList"></div>
+  </div>
+</section>
+
+<!-- популярные оправы -->
+<section class="block" style="padding-top: 0">
+  <div class="container">
+    <div class="section-head">
+      <div><div class="eyebrow">Каталог</div><h2>Популярные оправы</h2></div>
+      <a href="catalog.html" class="link-arrow">Весь каталог <span>→</span></a>
+    </div>
+    <div class="grid grid-4" id="popularFrames"></div>
+  </div>
+</section>
+
+<!-- специалисты -->
+<section class="block" style="padding-top: 0">
+  <div class="container">
+    <div class="section-head">
+      <div><div class="eyebrow">Команда</div><h2>Наши специалисты</h2></div>
+      <a href="team.html" class="link-arrow">Все специалисты <span>→</span></a>
+    </div>
+    <div class="team-grid" id="teamPreview"></div>
+  </div>
+</section>
+
+<!-- призыв к записи -->
+<section class="block" style="padding-top: 0">
+  <div class="container">
+    <div class="cta">
+      <div>
+        <h2>Пора проверить зрение?</h2>
+        <p>Запишитесь онлайн за минуту — выберите врача и удобное время. В демо-проекте заявка остаётся только в вашем браузере.</p>
+      </div>
+      <div class="slide-actions">
+        <a href="booking.html?service=check" class="btn btn-light btn-pill">Записаться на приём</a>
+        <a href="about.html#contacts" class="btn btn-glass btn-pill">Контакты</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<script src="js/data.js"></script>
+<script src="js/layout.js"></script>
+<script src="js/home.js"></script>
+</body>
+</html>

@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Парикмахерская «Тайм» — Якутск (демо)</title>
+  <meta name="description" content="Демо-версия сайта сети парикмахерских «Тайм» в Якутске: онлайн-запись, филиалы на карте, мастера.">
+  <meta name="robots" content="noindex">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Unbounded:wght@500;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<section class="hero">
+  <div class="hero-bg" style="background-image:url('images/hero.jpg')"></div>
+  <div class="container hero-inner">
+    <span class="eyebrow">Сеть парикмахерских · Якутск · 5 филиалов</span>
+    <h1>Ваше время<br>быть <em>красивыми</em></h1>
+    <p class="hero-lead">Стрижки, окрашивание, восстановление волос, брови и ресницы. Выберите удобный филиал,
+      мастера и время — запись займёт меньше минуты.</p>
+    <div class="hero-actions">
+      <a href="booking.html" class="btn btn-accent btn-xl btn-pulse">
+        <i data-icon="calendar"></i> Записаться онлайн
+      </a>
+      <a href="#gallery" class="btn btn-ghost-light btn-xl">Смотреть работы</a>
+    </div>
+    <ul class="hero-stats">
+      <li><b>5</b><span>филиалов в городе</span></li>
+      <li><b>14</b><span>мастеров</span></li>
+      <li><b>70</b><span>видов услуг</span></li>
+      <li><b>4,8</b><span>средний рейтинг*</span></li>
+    </ul>
+    <p class="hero-note">* Все цифры, адреса и отзывы на сайте — демонстрационные.</p>
+  </div>
+</section>
+
+<section class="block" id="about">
+  <div class="container about-grid">
+    <div class="about-media">
+      <img src="images/about.jpg" alt="Интерьер парикмахерской" loading="lazy">
+      <div class="about-badge"><b>с 2016</b><span>работаем для вас*</span></div>
+    </div>
+    <div>
+      <span class="eyebrow dark">О компании</span>
+      <h2>«Тайм» — парикмахерская, где ценят ваше время</h2>
+      <p class="lead">Мы открыли первый салон в центре Якутска, а сегодня работаем в пяти районах города.
+        Принимаем точно по записи, без ожидания, а в каждом филиале — мастера по стрижкам, окрашиванию и уходу.</p>
+      <div class="features">
+        <div class="feature"><i data-icon="clock"></i><div><b>Без ожидания</b><span>Приходите к назначенному времени — кресло уже свободно.</span></div></div>
+        <div class="feature"><i data-icon="shield"></i><div><b>Гарантия 7 дней</b><span>Бесплатно поправим стрижку, если что-то не понравится.</span></div></div>
+        <div class="feature"><i data-icon="sparkle"></i><div><b>Профкосметика</b><span>Работаем на профессиональных средствах для волос.</span></div></div>
+        <div class="feature"><i data-icon="coffee"></i><div><b>Кофе и Wi-Fi</b><span>Пока сохнет окрашивание, угостим кофе или чаем.</span></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="block block-tint" id="services">
+  <div class="container">
+    <div class="section-head">
+      <div>
+        <span class="eyebrow dark">Услуги</span>
+        <h2>Что мы делаем</h2>
+      </div>
+      <p>Выберите направление — откроем онлайн-запись. Цены указаны «от» и уточняются мастером.</p>
+    </div>
+    <div class="services-grid" id="servicesGrid"></div>
+  </div>
+</section>
+
+<section class="block" id="gallery">
+  <div class="container">
+    <div class="section-head">
+      <div>
+        <span class="eyebrow dark">Работы и примеры</span>
+        <h2>По 10 идей в каждом направлении</h2>
+      </div>
+      <p>Нажмите на фото, чтобы посмотреть подробнее и сразу записаться на эту услугу.</p>
+    </div>
+    <div class="tabs" id="galleryTabs" role="tablist"></div>
+    <div class="gallery" id="galleryGrid"></div>
+  </div>
+</section>
+
+<section class="block block-dark" id="branches">
+  <div class="container">
+    <div class="section-head light">
+      <div>
+        <span class="eyebrow">Филиалы на карте</span>
+        <h2>Мы рядом в каждом районе</h2>
+      </div>
+      <p>Нажмите на филиал в списке или на метку на карте. <b class="demo-inline">Демо: адреса вымышлены.</b></p>
+    </div>
+    <div class="branches-layout">
+      <div class="branch-list" id="branchList"></div>
+      <div class="map" id="homeMap"></div>
+    </div>
+  </div>
+</section>
+
+<section class="block" id="masters">
+  <div class="container">
+    <div class="section-head">
+      <div>
+        <span class="eyebrow dark">Команда</span>
+        <h2>Наши мастера</h2>
+      </div>
+      <p>Имена и рейтинги — демонстрационные.</p>
+    </div>
+    <div class="masters-grid" id="mastersGrid"></div>
+  </div>
+</section>
+
+<section class="block block-tint" id="reviews">
+  <div class="container">
+    <div class="section-head">
+      <div>
+        <span class="eyebrow dark">Отзывы</span>
+        <h2>Что говорят клиенты</h2>
+      </div>
+      <p id="reviewsSummary">Отзывы-примеры для демонстрации.</p>
+    </div>
+    <div class="reviews" id="homeReviews"></div>
+    <div class="reviews-more"><a href="reviews.html" class="btn btn-outline">Все отзывы и оставить свой</a></div>
+  </div>
+</section>
+
+<section class="cta-band">
+  <div class="container cta-inner">
+    <div>
+      <h2>Найдём для вас время уже сегодня</h2>
+      <p>Филиал → услуга → мастер → дата и время. Подтверждение — сразу после входа.</p>
+    </div>
+    <a href="booking.html" class="btn btn-accent btn-xl btn-pulse">Записаться онлайн</a>
+  </div>
+</section>
+
+<script src="js/credits.js"></script>
+<script src="js/data.js"></script>
+<script src="js/layout.js"></script>
+<script src="js/home.js"></script>
+</body>
+</html>

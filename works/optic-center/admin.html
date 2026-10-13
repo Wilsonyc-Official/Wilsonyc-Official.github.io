@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Оптик-Центр — панель управления</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<!-- вход -->
+<div class="login-wrap" id="loginScreen">
+  <form class="login-card" id="loginForm">
+    <div class="brand"><span class="brand-text">ОПТИ<span class="brand-lens">К</span><span class="brand-dash">-</span><span class="brand-lens">Ц</span>ЕНТР</span></div>
+    <h2 style="text-align: center; font-size: 20px">Панель управления</h2>
+    <div class="demo-note">Демо-доступ: логин <b>admin</b>, пароль <b>admin</b>. Все записи и контакты вымышлены.</div>
+    <div class="field"><label for="lUser">Логин</label><input id="lUser" autocomplete="username"></div>
+    <div class="field"><label for="lPass">Пароль</label><input id="lPass" type="password" autocomplete="current-password"></div>
+    <div class="error" id="lError"></div>
+    <button class="btn btn-block" style="margin-top: 8px">Войти</button>
+    <p class="hint" style="text-align: center; margin-bottom: 0"><a href="index.html">← На сайт</a></p>
+  </form>
+</div>
+
+<!-- панель -->
+<div class="admin-body" id="adminApp" hidden>
+  <aside class="sidebar">
+    <a href="index.html" class="brand brand-sm"><span class="brand-text">ОПТИ<span class="brand-lens">К</span><span class="brand-dash">-</span><span class="brand-lens">Ц</span>ЕНТР</span></a>
+    <button class="side-link active" data-view="dashboard">📊 Обзор</button>
+    <button class="side-link" data-view="bookings">📅 Записи <span class="side-count" id="newCount" hidden></span></button>
+    <button class="side-link" data-view="specialists">👩‍⚕️ Специалисты</button>
+    <button class="side-link" data-view="catalog">👓 Каталог оправ</button>
+    <div class="sidebar-bottom">
+      <a class="side-link" href="index.html" target="_blank">↗ Открыть сайт</a>
+      <button class="side-link" id="resetDemo">↺ Сбросить демоданные</button>
+      <button class="side-link" id="logout">⎋ Выйти</button>
+    </div>
+  </aside>
+
+  <main class="admin-main">
+    <!-- обзор -->
+    <section data-section="dashboard">
+      <div class="admin-top"><h1>Обзор</h1><span class="hint" id="todayLabel"></span></div>
+      <div class="stats" id="stats"></div>
+      <div class="two-col">
+        <div class="panel">
+          <h3>Записи на сегодня</h3>
+          <div class="day-list" id="todayList"></div>
+          <h3 style="margin-top: 24px">Новые заявки</h3>
+          <div class="day-list" id="newList"></div>
+        </div>
+        <div class="panel">
+          <h3>Записи к специалистам на 7 дней</h3>
+          <div class="bars" id="specBars"></div>
+          <h3 style="margin-top: 24px">Популярные услуги</h3>
+          <div class="bars" id="serviceBars"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- записи -->
+    <section data-section="bookings" hidden>
+      <div class="admin-top">
+        <h1>Записи клиентов</h1>
+        <button class="btn" id="addBooking">+ Добавить запись</button>
+      </div>
+      <div class="panel">
+        <div class="panel-tools">
+          <input type="search" id="bSearch" placeholder="Поиск по имени или телефону">
+          <select id="bSpec"><option value="">Все специалисты</option></select>
+          <select id="bStatus"><option value="">Все статусы</option></select>
+          <select id="bPeriod">
+            <option value="upcoming">Предстоящие</option>
+            <option value="today">Сегодня</option>
+            <option value="past">Прошедшие</option>
+            <option value="all">Все даты</option>
+          </select>
+        </div>
+        <div class="table-wrap">
+          <table class="table">
+            <thead><tr><th>Дата и время</th><th>Клиент</th><th>Специалист</th><th>Услуга</th><th>Оправа</th><th>Статус</th><th></th></tr></thead>
+            <tbody id="bookingsBody"></tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <!-- специалисты -->
+    <section data-section="specialists" hidden>
+      <div class="admin-top">
+        <h1>Специалисты</h1>
+        <button class="btn" id="addSpec">+ Добавить специалиста</button>
+      </div>
+      <div class="panel">
+        <div class="table-wrap">
+          <table class="table">
+            <thead><tr><th></th><th>Специалист</th><th>Дни приёма</th><th>Отзывы</th><th>Записей впереди</th><th>Онлайн-запись</th><th></th></tr></thead>
+            <tbody id="specsBody"></tbody>
+          </table>
+        </div>
+        <p class="hint" style="margin: 14px 0 0">Если у специалиста не отмечено ни одного дня приёма, на сайте он показывается серым — «Нет свободного времени».</p>
+      </div>
+    </section>
+
+    <!-- каталог -->
+    <section data-section="catalog" hidden>
+      <div class="admin-top">
+        <h1>Каталог оправ</h1>
+        <button class="btn" id="addFrame">+ Добавить оправу</button>
+      </div>
+      <div class="panel">
+        <div class="panel-tools">
+          <input type="search" id="cSearch" placeholder="Поиск по названию или бренду">
+          <select id="cStock">
+            <option value="">Все</option>
+            <option value="in">В наличии</option>
+            <option value="out">Под заказ</option>
+          </select>
+        </div>
+        <div class="table-wrap">
+          <table class="table">
+            <thead><tr><th></th><th>Модель</th><th>Форма / материал</th><th>Размер</th><th>Цена</th><th>Наличие</th><th></th></tr></thead>
+            <tbody id="framesBody"></tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+  </main>
+</div>
+
+<!-- форма оправы -->
+<div class="modal-backdrop" id="frameModal">
+  <form class="modal" id="frameForm" style="max-width: 640px" novalidate>
+    <button type="button" class="modal-close" data-close aria-label="Закрыть">×</button>
+    <h2 id="frameFormTitle">Оправа</h2>
+    <div id="framePreview" style="background: #f2f4f7; border-radius: 14px; padding: 20px 60px; margin-bottom: 18px"></div>
+    <div class="row">
+      <div class="field"><label>Бренд *</label><input name="brand" required></div>
+      <div class="field"><label>Модель *</label><input name="name" required></div>
+    </div>
+    <div class="row-3">
+      <div class="field"><label>Форма</label><select name="shape"></select></div>
+      <div class="field"><label>Материал</label><select name="material"></select></div>
+      <div class="field"><label>Для кого</label><select name="gender"></select></div>
+    </div>
+    <div class="row-3">
+      <div class="field"><label>Цена, ₽ *</label><input name="price" type="number" min="0" required></div>
+      <div class="field"><label>Старая цена, ₽</label><input name="oldPrice" type="number" min="0"></div>
+      <div class="field"><label>Цвет</label><input name="color" type="color" style="height: 44px; padding: 4px"></div>
+    </div>
+    <h4 style="margin: 6px 0 10px">Габариты, мм</h4>
+    <div class="row-3">
+      <div class="field"><label>Ширина линзы</label><input name="lensWidth" type="number" min="30" max="70"></div>
+      <div class="field"><label>Переносица</label><input name="bridge" type="number" min="10" max="30"></div>
+      <div class="field"><label>Заушник</label><input name="temple" type="number" min="100" max="160"></div>
+    </div>
+    <div class="row-3">
+      <div class="field"><label>Высота линзы</label><input name="lensHeight" type="number" min="20" max="70"></div>
+      <div class="field"><label>Ширина оправы</label><input name="frameWidth" type="number" min="90" max="170"></div>
+      <div class="field" style="display: flex; align-items: end"><label class="check"><input type="checkbox" name="inStock"> В наличии</label></div>
+    </div>
+    <div class="field"><label>Описание</label><textarea name="description"></textarea></div>
+    <div class="error" id="frameError"></div>
+    <div class="modal-actions">
+      <button type="button" class="btn btn-ghost" data-close>Отмена</button>
+      <button class="btn">Сохранить</button>
+    </div>
+  </form>
+</div>
+
+<!-- форма специалиста -->
+<div class="modal-backdrop" id="specModal">
+  <form class="modal" id="specForm" style="max-width: 600px" novalidate>
+    <button type="button" class="modal-close" data-close aria-label="Закрыть">×</button>
+    <h2 id="specFormTitle">Специалист</h2>
+    <div class="spec-preview" id="specPreview"></div>
+    <div class="field"><label>ФИО *</label><input name="name" placeholder="Фамилия Имя Отчество"></div>
+    <div class="row">
+      <div class="field"><label>Должность *</label><input name="role" list="roles"></div>
+      <div class="field"><label>Стаж</label><input name="experience" placeholder="например, 12 лет"></div>
+    </div>
+    <datalist id="roles"><option>Врач-офтальмолог</option><option>Оптометрист</option><option>Консультант-оптик</option><option>Мастер-оптик</option></datalist>
+    <div class="row">
+      <div class="field"><label>Фото (ссылка на изображение)</label><input name="photo" placeholder="images/team/atlasova.jpg"></div>
+      <div class="field"><label>Цвет аватара</label><input name="color" type="color" style="height: 44px; padding: 4px"></div>
+    </div>
+    <div class="field">
+      <label>Дни приёма</label>
+      <div class="weekday-picker" id="workDays"></div>
+    </div>
+    <div class="field"><label>О специалисте</label><textarea name="bio"></textarea></div>
+    <label class="check" style="margin-bottom: 14px"><input type="checkbox" name="active"> Показывать на сайте</label>
+    <div class="error" id="specError"></div>
+    <div class="modal-actions">
+      <button type="button" class="btn btn-ghost" data-close>Отмена</button>
+      <button class="btn">Сохранить</button>
+    </div>
+  </form>
+</div>
+
+<!-- форма записи -->
+<div class="modal-backdrop" id="bookingModal">
+  <form class="modal" id="bookingEditForm" style="max-width: 560px" novalidate>
+    <button type="button" class="modal-close" data-close aria-label="Закрыть">×</button>
+    <h2 id="bookingFormTitle">Запись</h2>
+    <div class="row">
+      <div class="field"><label>Имя *</label><input name="name"></div>
+      <div class="field"><label>Телефон *</label><input name="phone" type="tel"></div>
+    </div>
+    <div class="row">
+      <div class="field"><label>Специалист</label><select name="specialistId"></select></div>
+      <div class="field"><label>Услуга</label><select name="service"></select></div>
+    </div>
+    <div class="row">
+      <div class="field"><label>Дата *</label><input name="date" type="date"></div>
+      <div class="field"><label>Время *</label><select name="time"></select></div>
+    </div>
+    <div class="row">
+      <div class="field"><label>Статус</label><select name="status"></select></div>
+      <div class="field"><label>Оправа</label><select name="frameId"></select></div>
+    </div>
+    <div class="field"><label>Комментарий</label><textarea name="comment"></textarea></div>
+    <div class="error" id="bookingError"></div>
+    <div class="modal-actions">
+      <button type="button" class="btn btn-ghost" data-close>Отмена</button>
+      <button class="btn">Сохранить</button>
+    </div>
+  </form>
+</div>
+
+<div class="toast" id="toast"></div>
+
+<script src="js/data.js"></script>
+<script src="js/admin.js"></script>
+</body>
+</html>

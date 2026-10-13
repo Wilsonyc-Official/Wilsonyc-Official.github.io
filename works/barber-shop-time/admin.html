@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Админ-панель — Тайм (демо)</title>
+  <meta name="robots" content="noindex">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Unbounded:wght@500;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="admin-body" data-layout="none">
+
+<div class="demo-bar" role="note"><b>ДЕМО</b><span>Демо-версия админ-панели. Все данные вымышлены и хранятся только в вашем браузере.</span></div>
+
+<!-- вход -->
+<div class="admin-login" id="loginScreen">
+  <form class="auth-box" id="loginForm">
+    <a href="index.html" class="brand"><span class="brand-text">ТАЙМ<small>админ-панель</small></span></a>
+    <h2>Вход для сотрудников</h2>
+    <label class="field"><span>Логин</span><input id="lUser" autocomplete="username"></label>
+    <label class="field"><span>Пароль</span><input id="lPass" type="password" autocomplete="current-password"></label>
+    <p class="form-error" id="lError"></p>
+    <button class="btn btn-accent btn-lg btn-block" type="submit">Войти</button>
+    <p class="demo-hint">Демо-доступ: логин <b>admin</b>, пароль <b>admin</b>
+      <button type="button" class="link-btn" id="fillAdmin">подставить</button></p>
+    <a class="hint" href="index.html">← Вернуться на сайт</a>
+  </form>
+</div>
+
+<!-- панель -->
+<div class="admin-app" id="adminApp" hidden>
+  <aside class="admin-side">
+    <a href="index.html" class="brand brand-light"><span class="brand-text">ТАЙМ<small>админ-панель</small></span></a>
+    <nav class="admin-nav" id="adminNav">
+      <button data-view="overview" class="active">Обзор</button>
+      <button data-view="bookings">Записи</button>
+      <button data-view="schedule">Расписание</button>
+      <button data-view="masters">Мастера</button>
+      <button data-view="branches">Филиалы</button>
+      <button data-view="services">Услуги и цены</button>
+      <button data-view="reviews">Отзывы <span class="nav-count" id="pendingCount"></span></button>
+      <button data-view="clients">Клиенты</button>
+    </nav>
+    <div class="admin-side-foot">
+      <a href="index.html" class="admin-link">Открыть сайт ↗</a>
+      <button class="admin-link" id="resetDemo">Сбросить демо-данные</button>
+      <button class="admin-link" id="logout">Выйти</button>
+    </div>
+  </aside>
+  <main class="admin-main">
+    <div class="admin-top">
+      <button class="burger admin-burger" id="adminBurger" aria-label="Меню"><span></span><span></span><span></span></button>
+      <h1 id="viewTitle">Обзор</h1>
+      <span class="admin-user">Администратор (демо)</span>
+    </div>
+    <div id="view"></div>
+  </main>
+</div>
+
+<div class="modal-backdrop" id="modal" hidden>
+  <div class="modal" role="dialog" aria-modal="true">
+    <button class="modal-close" data-modal-close aria-label="Закрыть">×</button>
+    <div id="modalBody"></div>
+  </div>
+</div>
+<div class="toast" id="toast" role="status"></div>
+
+<script src="js/credits.js"></script>
+<script src="js/data.js"></script>
+<script src="js/layout.js"></script>
+<script src="js/admin.js"></script>
+</body>
+</html>

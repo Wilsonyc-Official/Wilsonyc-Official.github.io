@@ -1,0 +1,101 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <script>document.documentElement.classList.add("js")</script>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Wilsonyc | портфолио</title>
+  <meta name="description" content="Портфолио Wilsonyc (Wilsonyc-Official): сайты, дизайн и другие проекты. Все работы можно посмотреть вживую.">
+  <meta name="author" content="Wilsonyc-Official">
+  <meta name="theme-color" content="#07080b">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Wilsonyc | портфолио">
+  <meta property="og:description" content="Сайты, дизайн и другие проекты Wilsonyc-Official.">
+  <meta property="og:url" content="https://wilsonyc-official.github.io/">
+  <meta property="og:image" content="https://github.com/Wilsonyc-Official.png">
+  <link rel="canonical" href="https://wilsonyc-official.github.io/">
+  <link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Courier+Prime:wght@400;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body data-page="home">
+  <header id="header"></header>
+
+  <main>
+    <section class="hero">
+      <canvas class="hero__matrix" id="matrix" aria-hidden="true"></canvas>
+      <span class="scroll-hint" aria-hidden="true"></span>
+      <div class="container hero__content">
+        <span class="hero__label"><i></i>открыт для новых проектов</span>
+        <h1 class="neon" id="hero-name">Wilsonyc</h1>
+        <p class="hero__tagline" id="hero-tagline"></p>
+        <div class="hero__actions">
+          <a class="btn btn--primary" href="works.html" data-icon="arrow">Смотреть работы</a>
+          <a class="btn" id="hero-github" href="#" target="_blank" rel="noopener" data-icon="github">GitHub</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section--tight">
+      <div class="container">
+        <div class="stats">
+          <div class="stat reveal reveal--left" style="--i:0"><div class="stat__value" id="stat-projects">0</div><div class="stat__label" id="stat-projects-label">работ в портфолио</div></div>
+          <div class="stat reveal reveal--left" style="--i:1"><div class="stat__value" id="stat-cats">0</div><div class="stat__label">направлений</div></div>
+          <div class="stat reveal reveal--left" style="--i:2"><div class="stat__value" id="stat-repos">0</div><div class="stat__label">репозиториев на GitHub</div></div>
+          <div class="stat reveal reveal--left" style="--i:3"><div class="stat__value" id="stat-followers">0</div><div class="stat__label">подписчиков на GitHub</div></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="skills" style="padding-top:24px">
+      <div class="container">
+        <div class="section__head reveal">
+          <div><p class="eyebrow">// стек технологий</p><h2 class="h2">Технологии и навыки</h2></div>
+        </div>
+        <div class="skills" id="skills-chart"><div class="skills__loading">считаю навыки…</div></div>
+        <p class="skills__note">Уровень считается автоматически по количеству проектов с технологией в портфолио и репозиториях на GitHub. Наведите на столбик, чтобы увидеть подробности.</p>
+      </div>
+    </section>
+
+    <section class="section" style="padding-top:24px">
+      <div class="container">
+        <div class="section__head reveal">
+          <div><p class="eyebrow">// направления</p><h2 class="h2">Чем я занимаюсь</h2></div>
+        </div>
+        <div class="cats" id="cats"></div>
+      </div>
+    </section>
+
+    <section class="section" style="padding-top:0">
+      <div class="container">
+        <div class="section__head reveal">
+          <div><p class="eyebrow">// последние работы</p><h2 class="h2">Свежие проекты</h2></div>
+          <a class="link-more" href="works.html" data-icon="arrow">Все работы </a>
+        </div>
+        <div class="grid" id="latest"></div>
+      </div>
+    </section>
+
+    <section class="section" id="about" style="padding-top:0">
+      <div class="container">
+        <div class="about reveal">
+          <img class="about__avatar" id="about-avatar" alt="Аватар" width="128" height="128">
+          <div>
+            <h2 class="about__name" id="about-name"></h2>
+            <div class="about__nick" id="about-nick"></div>
+            <p class="about__text" id="about-text"></p>
+            <div class="about__links" id="about-links"></div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer id="footer"></footer>
+
+  <script src="data/projects.js"></script>
+  <script src="assets/js/app.js"></script>
+</body>
+</html>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Отзывы — Тайм (демо)</title>
+  <meta name="robots" content="noindex">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Unbounded:wght@500;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<section class="page-head">
+  <div class="container">
+    <div class="crumbs"><a href="index.html">Главная</a> / Отзывы</div>
+    <h1>Отзывы клиентов</h1>
+    <p>Отзывы с сайта, Яндекс Карт и 2ГИС в одном месте. Это демо: все отзывы — примеры.</p>
+  </div>
+</section>
+
+<section class="block reviews-section">
+  <div class="container reviews-layout">
+    <div class="reviews-main">
+      <div class="rating-summary" id="ratingSummary"></div>
+      <div class="toolbar reviews-toolbar">
+        <select id="fBranch" aria-label="Филиал"></select>
+        <div class="chip-filter" id="fSource"></div>
+        <select id="fSort" aria-label="Сортировка">
+          <option value="new">Сначала новые</option>
+          <option value="high">Сначала высокие оценки</option>
+          <option value="low">Сначала низкие оценки</option>
+        </select>
+      </div>
+      <div class="reviews reviews-list" id="reviewsList"></div>
+    </div>
+    <aside class="reviews-side">
+      <div class="panel" id="reviewForm"></div>
+      <div class="panel" id="externalReviews"></div>
+    </aside>
+  </div>
+</section>
+
+<script src="js/credits.js"></script>
+<script src="js/data.js"></script>
+<script src="js/layout.js"></script>
+<script src="js/reviews.js"></script>
+</body>
+</html>

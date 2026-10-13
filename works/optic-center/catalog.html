@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Каталог оправ — Оптик-Центр</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<section class="page-head">
+  <img class="page-head-bg" src="images/slide-2.jpg" alt="">
+  <div class="container">
+    <div class="crumbs"><a href="index.html">Главная</a> / Каталог оправ</div>
+    <h1>Каталог оправ</h1>
+    <p>Цены и точные размеры каждой модели. Понравившуюся оправу отложим для бесплатной примерки.</p>
+  </div>
+</section>
+
+<section class="block">
+  <div class="container">
+    <div class="catalog-layout">
+      <aside class="filters">
+        <h4>Форма</h4>
+        <div class="chips" id="fShape"></div>
+        <h4>Материал</h4>
+        <div class="chips" id="fMaterial"></div>
+        <h4>Для кого</h4>
+        <div class="chips" id="fGender"></div>
+        <h4>Цена, ₽</h4>
+        <div class="row">
+          <input type="number" id="fPriceMin" placeholder="от" min="0">
+          <input type="number" id="fPriceMax" placeholder="до" min="0">
+        </div>
+        <h4>Ширина линзы, мм</h4>
+        <select id="fLens">
+          <option value="">Любая</option>
+          <option value="s">Узкая (до 49)</option>
+          <option value="m">Средняя (50–53)</option>
+          <option value="l">Широкая (54+)</option>
+        </select>
+        <h4>Наличие</h4>
+        <label class="check"><input type="checkbox" id="fStock"> Только в наличии</label>
+        <button class="btn btn-ghost btn-block btn-sm" id="fReset" style="margin-top: 18px">Сбросить фильтры</button>
+      </aside>
+      <div>
+        <div class="catalog-toolbar">
+          <input type="search" id="fSearch" placeholder="Поиск по названию или бренду">
+          <select id="fSort">
+            <option value="popular">По популярности</option>
+            <option value="price-asc">Сначала дешевле</option>
+            <option value="price-desc">Сначала дороже</option>
+            <option value="width">По ширине оправы</option>
+          </select>
+        </div>
+        <div class="catalog-count" id="catalogCount"></div>
+        <div class="grid" id="catalogGrid"></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="block" id="size" style="padding-top: 0">
+  <div class="container">
+    <div class="size-guide">
+      <div id="sizeDiagram"></div>
+      <div>
+        <div class="eyebrow">Полезно знать</div>
+        <h2>Как понять размер оправы</h2>
+        <p class="hint">На внутренней стороне заушника ваших текущих очков указаны три числа, например <b>52□18-145</b>:</p>
+        <ul>
+          <li><b>52 мм</b> — ширина одной линзы</li>
+          <li><b>18 мм</b> — ширина переносицы (мостика)</li>
+          <li><b>145 мм</b> — длина заушника</li>
+          <li><b>Общая ширина</b> оправы должна примерно совпадать с шириной лица на уровне висков</li>
+        </ul>
+        <p class="hint">Сомневаетесь? Запишитесь на бесплатную примерку — консультант подберёт размер за 15 минут.</p>
+        <a href="booking.html?service=fitting" class="btn btn-pill">Записаться на примерку</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<script src="js/data.js"></script>
+<script src="js/layout.js"></script>
+<script src="js/catalog.js"></script>
+</body>
+</html>
